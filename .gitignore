@@ -1,7 +1,7 @@
-# .gitignore for ASP.NET Core
+# .gitignore for random recipe project
 
 # connection string
-**/appsettings.json
+api/appsettings.json
 
 # Binaries
 **/bin/
