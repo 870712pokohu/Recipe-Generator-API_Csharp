@@ -1,7 +1,7 @@
 # .gitignore for random recipe project
 
 # connection string
-api/appsettings.json
+**/appsettings.json
 
 # Binaries
 **/bin/
