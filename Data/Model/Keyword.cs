@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DataLayer.Model{
+namespace Data.Model{
     public class Keyword
     {
         [Key]

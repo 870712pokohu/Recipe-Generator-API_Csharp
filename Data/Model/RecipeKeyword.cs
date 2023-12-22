@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DataLayer.Model{
+namespace Data.Model{
     public class RecipeKeyword
     {
         public int DetailId { get; set; }

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DataLayer.Model
+namespace Data.Model
 {
     public class Detail
     {

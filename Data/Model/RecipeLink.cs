@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataLayer.Model
+namespace Data.Model
 {
     public class RecipeLink
     {

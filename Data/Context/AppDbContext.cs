@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using DataLayer.Model;
+using Data.Model;
 
-namespace DataLayer.Context
+namespace Data.Context
 {
     public class AppDbContext: DbContext
     {
@@ -11,21 +11,18 @@ namespace DataLayer.Context
         public DbSet<RecipeKeyword> RecipeKeyword { get; set; }
         public DbSet<RecipeLink> RecipeLink { get; set; }
 
-        private readonly IConfiguration _configuration;
+        private IConfiguration configuration;
 
-        public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration): base(options)
-        {
-            _configuration = configuration;
+    
+
+        public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration) : base(options){
+            this.configuration = configuration;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Avoid configuring if options have already been set (e.g., through Startup.cs)
-            if (!optionsBuilder.IsConfigured)
-            {
-                string? dbConnectionString = _configuration.GetConnectionString("MySQL_Connection_String");
-                optionsBuilder.UseMySql(dbConnectionString, ServerVersion.AutoDetect(dbConnectionString));
-            }
+            string? dbConnectionString = configuration.GetConnectionString("MySQL_Connection_String");
+            optionsBuilder.UseMySql(dbConnectionString, ServerVersion.AutoDetect(dbConnectionString));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

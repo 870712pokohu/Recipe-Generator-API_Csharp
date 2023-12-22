@@ -24,7 +24,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+    <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 
 </Project>

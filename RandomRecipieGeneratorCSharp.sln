@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api", "api\api.csproj", "{BC5DFC03-3FD6-4DFF-B342-CB53DDC93E9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebScrappingConsole", "WebScrappingConsole\WebScrappingConsole.csproj", "{FBA24060-DC9C-41B2-9AD0-76201FFA040F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{99628012-E35D-4BC1-B12A-64ECA05823FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BC5DFC03-3FD6-4DFF-B342-CB53DDC93E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC5DFC03-3FD6-4DFF-B342-CB53DDC93E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC5DFC03-3FD6-4DFF-B342-CB53DDC93E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA24060-DC9C-41B2-9AD0-76201FFA040F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA24060-DC9C-41B2-9AD0-76201FFA040F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA24060-DC9C-41B2-9AD0-76201FFA040F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA24060-DC9C-41B2-9AD0-76201FFA040F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99628012-E35D-4BC1-B12A-64ECA05823FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99628012-E35D-4BC1-B12A-64ECA05823FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99628012-E35D-4BC1-B12A-64ECA05823FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99628012-E35D-4BC1-B12A-64ECA05823FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
