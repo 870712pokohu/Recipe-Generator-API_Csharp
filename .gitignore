@@ -1,11 +1,11 @@
 # .gitignore for ASP.NET Core
 
 # connection string
-api/appsettings.json
+**/appsettings.json
 
 # Binaries
-*/bin/
-*/obj/
+**/bin/
+**/obj/
 
 # Visual Studio Code
 *.vscode/
