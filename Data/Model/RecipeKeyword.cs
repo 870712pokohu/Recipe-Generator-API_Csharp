@@ -5,7 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Data.Model{
     public class RecipeKeyword
     {
+        [Key]
+        public int Id { get; set; }
+        [ForeignKey("FK_Detail_Id")]
         public int DetailId { get; set; }
+        [ForeignKey("FK_Keyword_Id")]
         public int KeywordId { get; set; }
 
         // navigation properties

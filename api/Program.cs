@@ -10,9 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // configure application to use MySQL Database
-builder.Services.AddDbContext<AppDbContext>(option =>{
-   option.UseMySql(dbConnectionString,ServerVersion.AutoDetect(dbConnectionString)); 
-});
+builder.Services.AddDbContext<AppDbContext>();
 
 var app = builder.Build();
 

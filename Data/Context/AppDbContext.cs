@@ -1,6 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Configuration;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
 using Data.Model;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Data.Context
 {
@@ -11,17 +15,16 @@ namespace Data.Context
         public DbSet<RecipeKeyword> RecipeKeyword { get; set; }
         public DbSet<RecipeLink> RecipeLink { get; set; }
 
-        private IConfiguration configuration;
-
-    
-
-        public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration) : base(options){
-            this.configuration = configuration;
-        }
+        private IConfiguration Configuration {get; set;}
+        private string? dbConnectionString;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string? dbConnectionString = configuration.GetConnectionString("MySQL_Connection_String");
+            Configuration = new ConfigurationBuilder()
+            .SetBasePath(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName, "api"))
+            .AddJsonFile("appsettings.json",optional:false, reloadOnChange: true).Build();
+
+            dbConnectionString = Configuration.GetConnectionString("MySQL_Connection_String");
             optionsBuilder.UseMySql(dbConnectionString, ServerVersion.AutoDetect(dbConnectionString));
         }
 
@@ -62,7 +65,12 @@ namespace Data.Context
 
             modelBuilder.Entity<RecipeKeyword>(entity =>
             {
-                entity.HasKey(e => new{e.KeywordId,e.DetailId});
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.KeywordId).IsRequired();
+                entity.Property(e => e.DetailId).IsRequired();
+                entity.HasOne(e => e.Keyword).WithMany(e=>e.RecipeKeyword);
+                entity.HasOne(e => e.Detail).WithMany(e => e.RecipeKeyword);
             });
 
         }
