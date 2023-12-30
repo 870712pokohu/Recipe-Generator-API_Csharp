@@ -1,5 +1,8 @@
 # .gitignore for random recipe project
 
+# client side directory
+/client
+
 # connection string
 **/appsettings.json
 

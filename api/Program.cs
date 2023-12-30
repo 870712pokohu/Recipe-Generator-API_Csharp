@@ -6,9 +6,9 @@ var dbConnectionString = builder.Configuration.GetConnectionString("MySQL_Connec
 Console.WriteLine(dbConnectionString);
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 // configure application to use MySQL Database
 builder.Services.AddDbContext<AppDbContext>();
 
@@ -22,6 +22,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapControllers();
 
 app.Run();
 
