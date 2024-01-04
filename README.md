@@ -2,7 +2,7 @@
 Welcome to the Recipe Scraper & RESTful API project!
 - This project is inspired by the culinary wonders showcased on [TiffyCooks](https://tiffycooks.com/). 
 - This repository merges ASP.NET Core, EF Core, PuppeterSharp, and .NET 8, offering an immersive experience in crafting Web APIs and seamlessly extracting recipe data from the web.
-- [Navigate to frontend UI](https://github.com/870712pokohu/recipegenerator-client)
+- [Navigate to frontend UI](https://github.com/870712pokohu/Recipe-Generator-Client)
 
 ### 🕸️ Web API Route
 
